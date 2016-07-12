@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Hacking</title>
+  </head>
+  <body>
+    <h1>Javascript hacking page </h1>
+    <div class="" id='name'></div>
+    <input type="text" name="verb_one" id='verb_one' value="">
+    <input type="button" name="fill_button" id='fill_button' value="Fill it in">
+    <p id='sentence_one'>
+      I am planning on <span id='verb_one_output'>_____</span>ing today.
+    </p>
+      <script type="text/javascript">
+        var clickHandler = function(event) {
+          var verbOneInput = document.getElementById('verb_one');
+          var verbOneOutput = document.getElementById('verb_one_output');
+          verbOneOutput.innerText = verbOneInput.value
+          console.log(verbOneInput.value);
+        }
+
+        var buttonElement = document.getElementById('fill_button');
+        buttonElement.addEventListener('click', clickHandler);
+
+      </script>
+  </body>
+</html>

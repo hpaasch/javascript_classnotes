@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HEP Calculator</title>
+  </head>
+  <body>
+    <h1>JS Calc</h1>
+    <input type="number" name="left" id='left' value="">
+    <select class="" name="operator" id='operator'>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input type="number" name="right" id='right' value="">
+    <input type="button" name="calculate" id='calculate' value="Calculate!">
+    <h3 id='output'></h3>
+    <script type="text/javascript">
+      var calculate = function(event) {
+        var leftOperand = parseInt(document.getElementById('left').value);
+        var rightOperand = parseInt(document.getElementById('right').value);
+        var operator = document.getElementById('operator').value;
+        var result = 0;
+        if (operator === '+') {
+          result = leftOperand + rightOperand
+        } else if (operator === '-') {
+          result = leftOperand - rightOperand
+        } else if (operator === '*') {
+          result = leftOperand * rightOperand
+        } else if (operator === '/') {
+          result = leftOperand / rightOperand
+        }
+
+        var outputElement = document.getElementById('output');
+        outputElement.innerText = result;
+        document.getElementById('left').value = result;
+        document.getElementById('right').value = '';
+      }
+      var calculateButton = document.getElementById('calculate');
+      calculateButton.addEventListener('click', calculate);
+    </script>
+  </body>
+</html>
